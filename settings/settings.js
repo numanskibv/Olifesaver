@@ -27,3 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "/popup/popup.html";
     });
 });
+
+document.getElementById("returnButton").addEventListener("click", function () {
+  window.location.href = "/popup/popup.html";
+});

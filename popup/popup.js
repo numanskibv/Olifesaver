@@ -81,6 +81,10 @@ document.getElementById("scrapeButton").addEventListener("click", () => {
   });
 });
 
+document.getElementById("infoButton").addEventListener("click", () => {
+  window.location.href = "/info/info.html";
+});
+
 function getListAll(startDate, className) {
   console.log("Getting list of students");
   var inputDateFrom = document.querySelector("input[id*='input_datum_van']");

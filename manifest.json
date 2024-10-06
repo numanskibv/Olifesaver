@@ -19,12 +19,6 @@
       "24": "icons/lifesaver-size-24.png"
     }
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
   "web_accessible_resources": [
     {
       "resources": ["libs/xlsx.full.min.js"],

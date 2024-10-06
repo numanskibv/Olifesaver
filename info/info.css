@@ -1,0 +1,42 @@
+body {
+    width: 250px;
+}
+
+.logo {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.icon-round {
+    background-color: blue;
+    /* Blue background */
+    color: white;
+    /* White font color */
+    border: none;
+    /* Remove default border */
+    border-radius: 50%;
+    /* Make the button round */
+    padding: 5px 10px;
+    /* Add some padding */
+    text-align: center;
+    /* Center the text */
+    text-decoration: none;
+    /* Remove underline from text */
+    display: inline-block;
+    /* Make the button inline-block */
+    font-size: 14px;
+    /* Set font size */
+    font-weight: 900;
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    float: left;
+    /* Float the button to the right */
+}
+
+.icon-round:hover {
+    background-color: darkblue;
+    /* Darker blue on hover */
+}

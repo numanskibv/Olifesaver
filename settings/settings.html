@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings Page</title>
+    <link rel="stylesheet" href="settings.css" />
   </head>
   <body>
+    <img class="logo" src="/images/logo.png" alt="OLifeSaver" />
     <h1>Settings</h1>
     <form id="settingsForm">
       <label for="startDate">Start Date:</label>
       <input type="text" id="startDate" name="startDate" value="" /><br /><br />
 
-      <label for="className">Class Name:</label>
+      <label for="className">Klas naam:</label>
       <input type="text" id="className" name="className" value="" /><br /><br />
 
-      <button type="button" id="saveSettings">Save</button>
+      <button type="button" id="saveSettings">Opslaan</button>
     </form>
+    <button id="returnButton" class="icon-round"><</button>
 
     <script src="settings.js"></script>
   </body>
