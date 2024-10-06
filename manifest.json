@@ -1,0 +1,35 @@
+{
+  "name": "Olivesaver",
+  "version": "0.0.2",
+  "manifest_version": 3,
+  "description": "Osiris Handigheidjes",
+  "permissions": ["scripting", "activeTab", "tabs", "downloads"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "24": "icons/lifesaver-size-24.png",
+    "32": "icons/lifesaver-size-32.png",
+    "48": "icons/lifesaver-size-48.png",
+    "96": "icons/lifesaver-size-96.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "24": "icons/lifesaver-size-24.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["libs/xlsx.full.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
