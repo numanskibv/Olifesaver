@@ -126,6 +126,15 @@ document.getElementById("infoButton").addEventListener("click", () => {
 });
 
 function getListAll(startDate, className) {
+  const errorElement = document.querySelector(
+    "td#shReg\\:0\\:ph9\\:\\:_afrTtxt"
+  );
+  if (errorElement) {
+    alert(
+      "U bent niet op de juiste pagina. Ga naar Osiris en klik op Afwezigheid"
+    );
+    return;
+  }
   console.log("Getting list of students");
   var inputDateFrom = document.querySelector("input[id*='input_datum_van']");
   if (inputDateFrom) {
@@ -136,6 +145,7 @@ function getListAll(startDate, className) {
     group.value = className;
   }
   var button = document.querySelector('[id*="zoek_knop"] .af_button_link');
+
   if (button) {
     button.click();
     setTimeout(function () {
@@ -145,6 +155,15 @@ function getListAll(startDate, className) {
 }
 
 function scrapeStudentData() {
+  const errorElement = document.querySelector(
+    "td#shReg\\:0\\:ph9\\:\\:_afrTtxt"
+  );
+  if (errorElement) {
+    alert(
+      "U bent niet op de juiste pagina. Ga naar Osiris en klik op Afwezigheid"
+    );
+    return;
+  }
   const Students = [];
 
   // Select all the student rows
