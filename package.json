@@ -1,0 +1,21 @@
+{
+  "name": "olifesaver",
+  "version": "1.0.0",
+  "description": "<h1>Osiris Helper</h1>",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-libs": "copyfiles -u 1 node_modules/jspdf/dist/jspdf.umd.min.js node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.min.js node_modules/xlsx/dist/xlsx.full.min.js libs/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1"
+  }
+}

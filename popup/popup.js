@@ -51,7 +51,7 @@ document.getElementById("getListButton").addEventListener("click", function () {
   });
 });
 
-document.getElementById("scrapeButton").addEventListener("click", () => {
+document.getElementById("xlsDownloadButton").addEventListener("click", () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (tabs.length === 0) {
       console.error("No active tab found");
@@ -74,8 +74,48 @@ document.getElementById("scrapeButton").addEventListener("click", () => {
         target: { tabId: tabs[0].id },
         func: scrapeStudentData,
       },
-      () => {
-        console.log("Scraping executed");
+      (results) => {
+        if (results && results[0] && results[0].result) {
+          const students = results[0].result;
+          chrome.runtime.sendMessage({ Students: students, format: "xls" });
+        } else {
+          console.error("Failed to scrape student data");
+        }
+      }
+    );
+  });
+});
+
+document.getElementById("pdfDownloadButton").addEventListener("click", () => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (tabs.length === 0) {
+      console.error("No active tab found");
+      return;
+    }
+    // Check if we are on the correct URL
+    if (
+      !tabs[0].url.includes(
+        "https://mboutrecht.osiris-mbo.nl/osiris_docent/faces/Start"
+      )
+    ) {
+      alert(
+        "U bent niet ingelogd of op de juiste pagina. Ga naar de juiste pagina"
+      );
+      return;
+    }
+
+    chrome.scripting.executeScript(
+      {
+        target: { tabId: tabs[0].id },
+        func: scrapeStudentData,
+      },
+      (results) => {
+        if (results && results[0] && results[0].result) {
+          const students = results[0].result;
+          chrome.runtime.sendMessage({ Students: students, format: "pdf" });
+        } else {
+          console.error("Failed to scrape student data");
+        }
       }
     );
   });
@@ -161,9 +201,5 @@ function scrapeStudentData() {
     });
   });
 
-  // Log the scraped data to the console
-  console.log(Students);
-
-  // Send the scraped data to the background script
-  chrome.runtime.sendMessage({ Students });
+  return Students;
 }
