@@ -187,7 +187,7 @@ function scrapeStudentData() {
     Students.push({
       //$baseId: baseId,
       Name: studentName,
-      Number: studentNumber,
+      //Number: studentNumber,
       // Program: studentProgram,
       Email: studentEmail,
       // AbsenceReason: absenceReason,
