@@ -20,7 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(`Class Name: ${className}`);
 
       // Save the settings to localStorage
-      localStorage.setItem("startDate", startDate);
+      // store date in format dd/mm/yyyy
+      const dateParts = startDate.split("-");
+      const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+      localStorage.setItem("startDate", formattedDate);
+
       localStorage.setItem("className", className);
 
       // Redirect back to the popup
